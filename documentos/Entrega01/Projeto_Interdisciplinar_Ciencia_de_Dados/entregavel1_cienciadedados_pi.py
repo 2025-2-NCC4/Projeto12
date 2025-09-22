@@ -232,20 +232,17 @@ else:
 
 """**Qualidade dos Dados: Verificação de Coerência Geográfica (Latitude e Longitude)**"""
 
-print("--- Primeiras linhas da base de pedestres ---")
+print("Primeiras linhas da base de pedestres: ")
 print(dfPaulista[['latitude', 'longitude']].head())
-print("\n" + "="*60)
-print("Gerando links de verificação para as coordenadas no Google Maps")
-print("="*60)
-print("Clique nos links abaixo para ver onde as coordenadas realmente apontam.")
+print("\nDemonstração de alguns dos dados incoerentes:")
 
 for index, row in dfPaulista.head(3).iterrows():
     lat = row['latitude']
     lon = row['longitude']
     url = f"https://www.google.com/maps/search/?api=1&query={lat},{lon}"
-    print(f"\n- Amostra da Linha {index}:")
-    print(f"  Coordenadas no arquivo: Latitude={lat}, Longitude={lon}")
-    print(f"  Verifique no mapa: {url}")
+    print(f"Amostra da Linha {index}:")
+    print(f"Coordenadas no arquivo: Latitude={lat}, Longitude={lon}")
+    print(f"Verifique no mapa: {url}")
 
 """**Qualidade dos Dados: Verificação de Duplicatas (Telefone na Base de Pedestres)**"""
 
