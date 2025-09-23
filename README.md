@@ -15,98 +15,54 @@
 ## Descrição - Projeto PicMoney
 
 <p align="center">
-<img src="https://github.com/2025-1-NCC3/Projeto11/blob/main/imagens/img_saferide.PNG" alt="Logo Projeto PicMoney" border="0"><br>
-  Game by <a href="http://www.nyphotographic.com/">Nick Youngson</a> <a rel="license" href="https://creativecommons.org/licenses/by-sa/3.0/">CC BY-SA 3.0</a> <a href="http://pix4free.org/">Pix4free</a>
+<img src="https://github.com/2025-2-NCC4/Projeto12/blob/main/img/Logo%20PicMoney.png" border="0"><br>
+  Project by <a>Gabriel Carvalho, Guilherme Siqueira, Rodrigo Reis, Vitória Maciel</a>
 </p>
 
+Nosso projeto visa criar um dashboard interativo para a startup PicMoney, que usa realidade aumentada para distribuir cupons de desconto. A ideia é montar uma ferramenta para os diretores da empresa (como CEO e CFO), que junte as informações mais importantes — financeiras, operacionais e estratégicas — em um só lugar para facilitar a análise do negócio.   
 
-De um a dois parágrafos sobre o que é seu projeto e o que ele faz.
+Na prática, o painel vai permitir que cada diretor veja os dados mais relevantes para a sua área de um jeito simples e personalizado. O objetivo final é transformar uma grande quantidade de números em uma visão clara que ajude os executivos a tomar decisões melhores para a empresa. 
 <br><br>
-Meu projeto ajuda estudantes FECAP a configurarem seus githubs.
-<br><br>
-May the force be with you!
+
+## 🎨 Figma
+https://www.figma.com/design/XSnCrIA0VI2R1HRHaQzGYF/PI_PicMoney?node-id=63-3&p=f&t=seDTZs1m6twetZBW-0 
 <br><br>
 
 ## 🛠 Estrutura de pastas
 
--Raiz<br>
-|<br>
-|-->documentos<br>
-  &emsp;|-->antigos<br>
-  &emsp;|Documentação.docx<br>
-|-->executáveis<br>
-  &emsp;|-->windows<br>
-  &emsp;|-->android<br>
-  &emsp;|-->HTML<br>
-|-->imagens<br>
-|-->src<br>
-  &emsp;|-->Backend<br>
-  &emsp;|-->Frontend<br>
-|readme.md<br>
+```
+├── documentos/
+│   ├── Entrega1/
+│   │   ├── Análise_Inferencial_de_Dados/
+│   │   ├── Engenharia_de_Software_e_Arquitetura_de_Sistemas/
+│   │   ├── Projeto_Interdisciplinar_Ciência_de_Dados/
+│   │   └── Contabilidade_e_Finanças/
+│   ├── Documentação.docx/
+├── imagens/
+├── src/
+│   ├── Entrega1/
+│   │   ├── frontend/
+│   │   └── backend/
+│   ├── Entrega2/
+│   │   ├── frontend/
+│   │   └── backend/
+└── readme.md<br>
+```
 
-A pasta raiz contem dois arquivos que devem ser alterados:
-
-<b>README.MD</b>: Arquivo que serve como guia e explicação geral sobre seu projeto. O mesmo que você está lendo agora.
+<b>📄 README.MD</b>: Arquivo que serve como guia e explicação geral sobre o projeto.
 
 Há também 4 pastas que seguem da seguinte forma:
 
-<b>documentos</b>: Toda a documentação estará nesta pasta.
+<b>🗂️ Documentos</b>: Toda a documentação geral do projeto. Além das entregas das disciplinas do semestre.
 
-<b>executáveis</b>: Binários e executáveis do projeto devem estar nesta pasta.
+<b>📷 imagens</b>: Imagens utilizadas para documentação e explicação do projeto.
 
-<b>imagens</b>: Imagens do sistema
-
-<b>src</b>: Pasta que contém o código fonte.
+<b>🧑‍💻 src</b>: Pasta que contém o código fonte (frontend e backend).
 
 ## 🛠 Instalação
 
-<b>Android:</b>
-
-Faça o Download do JOGO.apk no seu celular.
-Execute o APK e siga as instruções de seu telefone.
-
-```sh
-Coloque código do prompt de comnando se for necessário
-```
-
-<b>Windows:</b>
-
-Não há instalação! Apenas executável!
-Encontre o JOGO.exe na pasta executáveis e execute-o como qualquer outro programa.
-
-```sh
-Coloque código do prompt de comnando se for necessário
-```
-
-<b>HTML:</b>
-
-Não há instalação!
-Encontre o index.html na pasta executáveis e execute-o como uma página WEB (através de algum browser).
-
 ## 💻 Configuração para Desenvolvimento
 
-Descreva como instalar todas as dependências para desenvolvimento e como rodar um test-suite automatizado de algum tipo. Se necessário, faça isso para múltiplas plataformas.
-
-Para abrir este projeto você necessita das seguintes ferramentas:
-
--<a href="https://godotengine.org/download">GODOT</a>
-
-```sh
-make install
-npm test
-Coloque código do prompt de comnando se for necessário
-```
-
 ## 📋 Licença/License
-Utilize o link <https://chooser-beta.creativecommons.org/> para fazer uma licença CC BY 4.0.
 
 ## 🎓 Referências
-
-Aqui estão as referências usadas no projeto.
-
-1. <https://github.com/iuricode/readme-template>
-2. <https://github.com/gabrieldejesus/readme-model>
-3. <https://chooser-beta.creativecommons.org/>
-4. <https://freesound.org/>
-5. <https://www.toptal.com/developers/gitignore>
-6. Músicas por: <a href="https://freesound.org/people/DaveJf/sounds/616544/"> DaveJf </a> e <a href="https://freesound.org/people/DRFX/sounds/338986/"> DRFX </a> ambas com Licença CC 0.
