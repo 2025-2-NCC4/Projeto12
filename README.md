@@ -37,6 +37,7 @@ https://www.figma.com/design/XSnCrIA0VI2R1HRHaQzGYF/PI_PicMoney?node-id=63-3&p=f
 │   │   ├── Engenharia_de_Software_e_Arquitetura_de_Sistemas/
 │   │   ├── Projeto_Interdisciplinar_Ciência_de_Dados/
 │   │   └── Contabilidade_e_Finanças/
+│   ├── Entrega2/
 │   ├── Documentação.docx/
 ├── imagens/
 ├── src/
