@@ -1,0 +1,24 @@
+.dmc-tabs {
+  color: white;
+  position: relative;
+  background-color: #001B22;
+  border: none;
+  font-size: 1.2rem;
+  font-weight: 500;
+
+  &:hover {
+    background-color: #343f3f;
+  }
+
+  &[data-active] {
+    z-index: 1;
+    background-color: #0d3d3d;
+
+    color: var(--mantine-color-white);
+  }
+}
+
+.dmc-navbar {
+  background-color: #001B22;
+  border: none;
+}

@@ -1,0 +1,18 @@
+[theme]
+# Cor de fundo principal
+base = "dark"
+
+# Cor de fundo primária (para widgets)
+primaryColor = "#6bbf30"
+
+# Cor de fundo do app
+backgroundColor = "#000000" # Azul escuro/petróleo do logo
+
+# Cor de fundo secundária (para barras laterais, etc.)
+secondaryBackgroundColor = "#1a3a45"
+
+# Cor do texto principal
+textColor = "#FFFFFF"
+
+# Cor das fontes
+font = "sans serif"
