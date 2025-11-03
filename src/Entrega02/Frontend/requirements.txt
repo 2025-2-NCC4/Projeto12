@@ -1,7 +1,18 @@
-streamlit
-dotenv
-plotly
-pandas
-mysql
-mysql-connector-python
-pymysql
+# Streamlit - Framework web para dashboards
+streamlit==1.51.0
+
+# Visualização de dados
+plotly==6.3.1
+pandas==2.3.3
+
+# Conexão com MySQL
+mysql-connector-python==9.5.0
+sqlalchemy==2.0.44
+pymysql==1.1.2
+cryptography==46.0.3
+
+# Google Gemini AI
+google-generativeai==0.8.5
+
+# Utilitários para processamento de dados Excel (usado no backend)
+openpyxl==3.1.5

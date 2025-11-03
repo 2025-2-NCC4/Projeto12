@@ -170,9 +170,7 @@ try:
         title='Receita Total (GMV) ao Longo do Tempo',
         labels={'data_hora_transacao': 'Data', 'valor_transacao': 'Receita (R$)'}, # [CORREÇÃO]
         template='plotly_dark' 
-    )
-
-    # Customiza o gráfico com as cores da PicMoney
+    )    # Customiza o gráfico com as cores da PicMoney
     fig_receita.update_traces(
         line=dict(color=PICMONEY_COLORS['verde'], width=3)
     )
