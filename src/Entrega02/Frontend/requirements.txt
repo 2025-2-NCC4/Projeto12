@@ -1,0 +1,7 @@
+streamlit
+dotenv
+plotly
+pandas
+mysql
+mysql-connector-python
+pymysql
