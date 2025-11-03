@@ -1,3 +1,6 @@
+# Streamlit Secrets
+.streamlit/secrets.toml
+
 # Logs
 logs
 *.log
@@ -146,6 +149,3 @@ venv/
 # Arquivos compilados do Python
 __pycache__/
 *.py[cod]
-
-# Arquivo de segredos do Streamlit (CONTÉM SENHAS!)
-.streamlit/secrets.toml

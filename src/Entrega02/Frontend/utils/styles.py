@@ -91,6 +91,16 @@ def injetar_estilos_globais():
         .kpi-delta-pos { color: #4CAF50; font-size: 14px; font-weight: 600; }
         .kpi-delta-neg { color: #F44336; font-size: 14px; font-weight: 600; }
 
+        .custom-info-box {
+            background-color: %(azul)s;
+            border: 1px solid %(amarelo)s;
+            border-radius: 12px; /* Igual aos KPI cards */
+            padding: 20px;
+            color: %(branco)s; /* Texto branco */
+            font-family: 'Raleway', sans-serif;
+            font-size: 1.1rem; /* Fonte um pouco maior */
+            text-align: center;
+        }
 
         /* --- Hack para Forçar a Logo Acima da Navegação --- */
         [data-testid="stSidebar"] > div:first-child {
@@ -159,9 +169,6 @@ def injetar_estilos_globais():
     st.markdown(css, unsafe_allow_html=True)
 
 def injetar_particulas():
-    """
-    Injeta o script do particles.js para o efeito de "movimento" no fundo.
-    """
     # URL do script particles.js
     particles_js_url = "https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"
     
@@ -180,13 +187,13 @@ def injetar_particulas():
       "interactivity": { "detect_on": "canvas", "events": { "onhover": { "enable": false }, "onclick": { "enable": false } } },
       "retina_detect": true
     }
-    """ % PICMONEY_COLORS # Injeta as cores da paleta no JSON
+    """ % PICMONEY_COLORS
     
     # O HTML que será injetado
     particles_html = f"""
     <div id="particles-js" style="position: fixed; width: 100%; height: 100%; top: 0; left: 0; z-index: -1;"></div>
     <script src="{particles_js_url}"></script>
-    <script type"text/javascript">
+    <script type="text/javascript">
         document.addEventListener('DOMContentLoaded', (event) => {{
             particlesJS('particles-js', {particles_json_config});
         }});
