@@ -23,7 +23,7 @@ st.markdown("Visão de performance geral, público e parceiros.")
 # --- Carregar Dados ---
 # (Busque apenas os dados que o CEO precisa)
 try:
-    df_ceo = carregar_dados_mysql("SELECT * FROM sua_tabela_players LIMIT 100") # Query de exemplo
+    df_ceo = carregar_dados_mysql("SELECT * FROM player") # Tabela real do banco
     if df_ceo.empty:
         st.error("Não foi possível carregar os dados do CEO.")
         st.stop()
@@ -35,12 +35,12 @@ except Exception as e:
 st.sidebar.header("Filtros CEO")
 cidade_selecionada = st.sidebar.multiselect(
     "Selecione a Cidade",
-    options=df_ceo["cidade_residencial"].unique(),
-    default=df_ceo["cidade_residencial"].unique()
+    options=df_ceo["cidade"].unique(),
+    default=df_ceo["cidade"].unique()
 )
 
 # Filtra o DataFrame
-df_filtrado = df_ceo[df_ceo["cidade_residencial"].isin(cidade_selecionada)]
+df_filtrado = df_ceo[df_ceo["cidade"].isin(cidade_selecionada)]
 
 # --- Conteúdo da Página ---
 st.header("Análise de Usuários (Players)")

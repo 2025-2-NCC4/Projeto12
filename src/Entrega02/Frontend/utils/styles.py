@@ -20,9 +20,20 @@ def injetar_estilos_globais():
         /* --- Fonte 'Raleway' --- */
         @import url('https://fonts.googleapis.com/css2?family=Raleway:wght@400;700;800&display=swap');
         
+        /* --- Fonte de Ícones Material Design (Fix para expanders) --- */
+        @import url('https://fonts.googleapis.com/icon?family=Material+Icons');
+        
         html, body, [class*="st-"], .stApp {
             font-family: 'Raleway', sans-serif; /* Fonte aplicada */
         }
+        
+        /* Exceção: ícones devem usar Material Icons, não Raleway */
+        [data-testid="stIconMaterial"],
+        .material-icons,
+        span[translate="no"] {
+            font-family: 'Material Icons' !important;
+        }
+        
         /* --- Fim da Mudança de Fonte --- */
 
 
@@ -107,6 +118,39 @@ def injetar_estilos_globais():
         }
         .main-content-wrapper {
             padding: 2rem 5rem 5rem 5rem;
+        }
+        
+        /* --- Fix para ícones do Material Design (expander, etc) --- */
+        .streamlit-expanderHeader {
+            font-size: 16px !important;
+        }
+        /* Força o carregamento correto dos ícones do Material */
+        [data-testid="stExpander"] summary::before {
+            content: "" !important;
+        }
+        /* Garante que os ícones sejam renderizados como font icons */
+        .material-icons {
+            font-family: 'Material Icons' !important;
+            font-weight: normal;
+            font-style: normal;
+            font-size: 24px;
+            display: inline-block;
+            line-height: 1;
+            text-transform: none;
+            letter-spacing: normal;
+            word-wrap: normal;
+            white-space: nowrap;
+            direction: ltr;
+        }
+        
+        /* Fix específico para o ícone do expander do Streamlit */
+        [data-testid="stIconMaterial"] {
+            font-family: 'Material Icons' !important;
+            font-feature-settings: 'liga' 1;
+            -webkit-font-feature-settings: 'liga';
+            -moz-font-feature-settings: 'liga';
+            text-rendering: optimizeLegibility;
+            -webkit-font-smoothing: antialiased;
         }
         
     </style> 
