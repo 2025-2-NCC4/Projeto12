@@ -1,0 +1,16 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+             "name": "Python: Flask (Direct)",
+                "type": "debugpy",
+                "request": "launch",
+                "program": "${workspaceFolder}/Backend/app.py",
+                "env": {
+                    "FLASK_DEBUG": "1"
+            },
+    "jinja": true
+}
+        
+    ]
+}

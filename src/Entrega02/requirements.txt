@@ -1,19 +1,16 @@
-# Streamlit - Framework web para dashboards
+Flask==3.0.3
+Flask-Cors==4.0.1
+Flask-Login==0.6.3
+python-dotenv==1.0.1
+Werkzeug==3.0.4
+requests==2.32.3
 streamlit==1.51.0
-
-# Visualização de dados
 plotly==6.3.1
 pandas==2.3.3
-
-# Conexão com MySQL
 mysql-connector-python==9.5.0
 sqlalchemy==2.0.44
 pymysql==1.1.2
 cryptography==46.0.3
-
-# Google Gemini AI
 google-generativeai==0.8.5
-
-# Utilitários para processamento de dados Excel (usado no backend)
 openpyxl==3.1.5
 unidecode

@@ -1,3 +1,5 @@
+import os
+from dotenv import load_dotenv
 import streamlit as st
 import google.generativeai as genai
 from utils.database import carregar_dados_mysql
@@ -6,8 +8,8 @@ import pandas as pd
 def configurar_gemini():
     """Configura a API do Google Gemini"""
     try:
-        api_key = st.secrets["gemini"]["api_key"]
-        genai.configure(api_key=api_key)
+        load_dotenv()
+        genai.configure(api_key=os.getenv("GEMINI_API_KEY"))
         return True
     except Exception as e:
         st.error(f"Erro ao configurar Gemini: {e}")
