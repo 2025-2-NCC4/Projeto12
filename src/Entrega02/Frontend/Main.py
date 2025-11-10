@@ -25,7 +25,9 @@ NOME_USUARIO = (usuario or {}).get("nome", "")
 injetar_estilos_globais()
 injetar_particulas()
 
-st.sidebar.image("assets/Logo_PicMoney_SemFundo.png", width=200)
+image_path = os.path.join(os.path.dirname(__file__), "assets", "Logo_PicMoney_SemFundo.png")
+
+st.sidebar.image(image_path, width=200)
 st.sidebar.markdown("---")
 
 st.sidebar.page_link("Main.py", label="Início", icon="🏠")

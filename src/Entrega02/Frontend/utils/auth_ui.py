@@ -11,6 +11,8 @@ SIDE_COL = 5           # larguras das colunas laterais
 LOGO_HEIGHT = 150      # altura do logo
 SHIFT_UP_PX = 120      # quanto o bloco do login sobe
 
+cookie_controller = CookieController()
+
 
 def _force_logout(base_url: str | None = None):
     try:
@@ -18,16 +20,17 @@ def _force_logout(base_url: str | None = None):
         api.logout()
     except Exception:
         pass
-    st.session_state.pop("usuario_logado", None)
-    controller = CookieController()
-    controller.remove('usuario_logado')
+    
+    cookie_controller.remove('usuario_logado')
 
 
 def go_to_login(base_url: str | None = None, reason: str | None = None, after: str | None = None):
     if reason:
         st.session_state["login_warning"] = reason
+        
     if after:
         st.session_state["after_login_redirect"] = after
+
     try:
         st.switch_page("pages/Login.py")
     except Exception:
@@ -201,8 +204,7 @@ def render_login_ui(base_url: str | None = None):
             api = BackendAPI(base_url)
             data = api.login(email, senha)
 
-            controller = CookieController()
-            controller.set('usuario_logado', data)
+            cookie_controller.set('usuario_logado', data)
 
             st.session_state["usuario_logado"] = data
             st.success(f"Bem-vindo, {data.get('nome', 'usuário')}!")
@@ -224,13 +226,16 @@ def render_login_ui(base_url: str | None = None):
 
 
 def require_login(base_url: str = None, perfil_obrigatorio: str | None = None, redirect_to: str | None = "pages/Login.py"):
-    controller = CookieController()
-    usuario = controller.get('usuario_logado')
+    
+    
+    try:
+        current_page = st.context.page_name
+    except:
+        current_page = None
+    
+    usuario = cookie_controller.get('usuario_logado')
+
     if not usuario:
-        try:
-            current_page = st.context.page_name
-        except Exception:
-            current_page = None
         go_to_login(base_url, after=current_page)
         st.stop()
 
@@ -239,15 +244,10 @@ def require_login(base_url: str = None, perfil_obrigatorio: str | None = None, r
             f"Acesso não autorizado. Perfil requerido: {perfil_obrigatorio}. "
             f"Seu perfil: {usuario.get('perfil')}."
         )
-        try:
-            current_page = st.context.page_name
-        except Exception:
-            current_page = None
 
         if redirect_to:
             go_to_login(base_url, reason=reason, after=current_page)
         else:
-            _force_logout(base_url)
             render_login_ui(base_url)
         st.stop()
 

@@ -2,15 +2,28 @@
     "version": "0.2.0",
     "configurations": [
         {
-             "name": "Python: Flask (Direct)",
-                "type": "debugpy",
-                "request": "launch",
-                "program": "${workspaceFolder}/Backend/app.py",
-                "env": {
-                    "FLASK_DEBUG": "1"
+            "name": "Python: Streamlit (main.py)",
+            "type": "debugpy",
+            "request": "launch",
+            "module": "streamlit",
+            "args": [
+                "run",
+                "${workspaceFolder}/Frontend/main.py"
+            ],
+            "console": "integratedTerminal",
+            "justMyCode": true,
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "name": "Python: Flask (Direct)",
+            "type": "debugpy",
+            "request": "launch",
+            "program": "${workspaceFolder}/Backend/app.py",
+            "env": {
+                "FLASK_DEBUG": "1"
             },
-    "jinja": true
-}
+            "jinja": true
+        }
         
     ]
 }

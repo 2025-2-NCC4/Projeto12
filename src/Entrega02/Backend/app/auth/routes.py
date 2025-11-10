@@ -13,7 +13,7 @@ def login():
     if not email or not senha:
         return jsonify({"ok": False, "error": "email_e_senha_obrigatorios"}), 400
 
-    user = Usuario.query.filter_by(email=email).first()
+    user: Usuario = Usuario.query.filter_by(email=email).first()
     if not user or not user.check_password(senha):
         return jsonify({"ok": False, "error": "credenciais_invalidas"}), 401
 
