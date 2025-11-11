@@ -102,7 +102,7 @@ Antes de começar, garanta que você tenha os seguintes softwares instalados em 
 git clone https://github.com/seu-usuario/seu-repositorio.git
 cd seu-repositorio
 ```
-<b>3 - Instalar as Bibliotecas Python Este projeto requer várias bibliotecas. Instale todas com pip:</b>  
+<b>3 - Instalar as Bibliotecas Python Este projeto requer várias bibliotecas. Instale todas com pip.</b>  
 <b>4 - Execute o Projeto</b>  
 
 ## 💻 Configuração para Desenvolvimento
