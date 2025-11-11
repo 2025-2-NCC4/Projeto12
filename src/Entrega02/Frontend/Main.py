@@ -79,7 +79,7 @@ for idx, (key, page_info) in enumerate(page_list):
     is_expanded = (idx == 0)
     page_info['instance'].render_filters()
         
-if st.sidebar.button("Sair", use_container_width=True):
+if st.sidebar.button("Sair", width='stretch'):
     logout()
 
 # Hero Video

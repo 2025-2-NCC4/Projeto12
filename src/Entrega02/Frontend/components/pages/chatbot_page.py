@@ -68,7 +68,7 @@ class ChatbotPage(BasePage):
                             unsafe_allow_html=True
                         )
                         if msg.get("dataframe") is not None and not msg["dataframe"].empty:
-                            st.dataframe(msg["dataframe"], use_container_width=True)
+                            st.dataframe(msg["dataframe"], width='stretch')
                         if msg.get("sql"):
                             with st.expander("📝 Ver SQL executada"):
                                 st.code(msg["sql"], language="sql")
@@ -88,9 +88,9 @@ class ChatbotPage(BasePage):
                 )
                 c1_btn, c2_btn = st.columns([1, 1])
                 with c1_btn:
-                    enviar = st.form_submit_button("📤 Enviar Pergunta", use_container_width=True)
+                    enviar = st.form_submit_button("📤 Enviar Pergunta", width='stretch')
                 with c2_btn:
-                    limpar = st.form_submit_button("🗑️ Limpar Conversa", use_container_width=True)
+                    limpar = st.form_submit_button("🗑️ Limpar Conversa", width='stretch')
 
                 if limpar:
                     st.session_state.historico_chat = []

@@ -24,4 +24,4 @@ class BarChart(BaseComponent):
             title_font_color=self._get_config('color'),
             font_color=PICMONEY_COLORS['branco']
         )
-        st.plotly_chart(fig, use_container_width=True)
+        st.plotly_chart(fig, width='stretch')

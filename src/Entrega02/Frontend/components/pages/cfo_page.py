@@ -144,8 +144,8 @@ class CFOPage(BasePage):
         self._render_rentabilidade_analysis()
         st.markdown("---")
         self._render_risk_analysis()
-        st.markdown("---")
-        self._render_bairro_map()
+        # st.markdown("---")
+        # self._render_bairro_map()
     
     def _render_kpis(self):
         """Render financial KPI cards"""
@@ -209,7 +209,7 @@ class CFOPage(BasePage):
                 plot_bgcolor='rgba(0,0,0,0)',
                 paper_bgcolor='rgba(0,0,0,0)'
             )
-            st.plotly_chart(fig_linha, use_container_width=True)
+            st.plotly_chart(fig_linha, width='stretch')
         else:
             st.info("Sem dados para o período selecionado.")
     
@@ -242,7 +242,7 @@ class CFOPage(BasePage):
                     paper_bgcolor='rgba(0,0,0,0)',
                     showlegend=False
                 )
-                st.plotly_chart(fig_barra, use_container_width=True)
+                st.plotly_chart(fig_barra, width='stretch')
             else:
                 st.info("Sem dados por tipo de cupom.")
         
@@ -286,7 +286,7 @@ class CFOPage(BasePage):
                     line=dict(color=PICMONEY_COLORS['verde'], width=2, dash='dash'),
                     opacity=0.5
                 )
-                st.plotly_chart(fig_scatter, use_container_width=True)
+                st.plotly_chart(fig_scatter, width='stretch')
             else:
                 st.info("Sem dados por categoria.")
     
@@ -315,7 +315,7 @@ class CFOPage(BasePage):
                 margin=dict(t=30, l=10, r=10, b=10)
             )
             fig_parc.update_yaxes(title_text="")
-            st.plotly_chart(fig_parc, use_container_width=True)
+            st.plotly_chart(fig_parc, width='stretch')
         else:
             st.info("Sem dados de parceiros.")
     
@@ -379,7 +379,7 @@ class CFOPage(BasePage):
                 plot_bgcolor='rgba(0,0,0,0)',
                 paper_bgcolor='rgba(0,0,0,0)'
             )
-            st.plotly_chart(fig_mapa, use_container_width=True)
+            st.plotly_chart(fig_mapa, width='stretch')
         else:
             st.info("Sem dados por bairro para os filtros selecionados.")
     

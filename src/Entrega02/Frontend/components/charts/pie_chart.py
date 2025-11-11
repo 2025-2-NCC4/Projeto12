@@ -29,4 +29,4 @@ class PieChart(BaseComponent):
             paper_bgcolor='rgba(0,0,0,0)',
             font_color=PICMONEY_COLORS['branco']
         )
-        st.plotly_chart(fig, use_container_width=True)
+        st.plotly_chart(fig, width='stretch')

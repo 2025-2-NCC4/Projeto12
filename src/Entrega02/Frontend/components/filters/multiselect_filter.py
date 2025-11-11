@@ -34,15 +34,12 @@ class MultiSelectWithAllFilter(BaseComponent):
         
         # Update multiselect based on checkbox
         if select_all:
-            current_selection = options
-        else:
-            current_selection = st.session_state[multiselect_key]
+            st.session_state[multiselect_key] = options
         
         # Multiselect
         selected = st.sidebar.multiselect(
             f"{self._get_config('icon')} {self._get_config('label')}",
             options=options,
-            default=current_selection,
             key=multiselect_key,
             disabled=select_all  # Disable when "select all" is checked
         )
