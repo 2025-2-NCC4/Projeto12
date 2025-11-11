@@ -259,7 +259,7 @@ def renderizar_chatbot():
                 else:
                     st.markdown(f'<div class="bot-message">🤖 {msg["texto"]}</div>', unsafe_allow_html=True)
                     if msg.get('dataframe') is not None and not msg['dataframe'].empty:
-                        st.dataframe(msg['dataframe'], use_container_width=True)
+                        st.dataframe(msg['dataframe'], width='stretch')
                     if msg.get('sql'):
                         with st.expander("📝 SQL"):
                             st.code(msg['sql'], language='sql')

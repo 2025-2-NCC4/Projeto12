@@ -126,9 +126,7 @@ def injetar_estilos_globais():
             width: 100%% !important; /* <<< [A CORREÇÃO ESTÁ AQUI] */
             max-width: none !important;
         }
-        .main-content-wrapper {
-            padding: 2rem 5rem 5rem 5rem;
-        }
+
         
         /* --- Fix para ícones do Material Design (expander, etc) --- */
         .streamlit-expanderHeader {
@@ -184,7 +182,7 @@ def injetar_particulas():
         "line_linked": { "enable": false },
         "move": { "enable": true, "speed": 1, "direction": "none", "random": true, "straight": false, "out_mode": "out", "bounce": false }
       },
-      "interactivity": { "detect_on": "canvas", "events": { "onhover": { "enable": false }, "onclick": { "enable": false } } },
+      "interactivity": { "detect_on": "canvas", "events": { "onclick": { "enable": false } } },
       "retina_detect": true
     }
     """ % PICMONEY_COLORS
@@ -201,3 +199,26 @@ def injetar_particulas():
     """
     
     st.components.v1.html(particles_html, height=0)
+    
+def remover_padding_completo():
+    """Remove absolutamente todo padding e margin"""
+    st.markdown("""
+        <style>
+            /* Container principal */
+            .main .block-container {
+                padding: 0 !important;
+                margin: 0 !important;
+                max-width: 100% !important;
+            }
+            
+            /* App view */
+            section[data-testid="stAppViewContainer"] {
+                padding: 0 !important;
+            }
+            
+            section[data-testid="stAppViewContainer"] > div {
+                padding: 0 !important;
+            }
+        </style>
+    """, unsafe_allow_html=True)
+    

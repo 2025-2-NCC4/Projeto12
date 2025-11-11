@@ -16,7 +16,7 @@ cookie_controller = CookieController()
 
 def _force_logout(base_url: str | None = None):
     try:
-        api = BackendAPI(base_url)
+        api = BackendAPI()
         api.logout()
     except Exception:
         pass
@@ -201,7 +201,7 @@ def render_login_ui(base_url: str | None = None):
 
     if submitted:
         try:
-            api = BackendAPI(base_url)
+            api = BackendAPI()
             data = api.login(email, senha)
 
             cookie_controller.set('usuario_logado', data)

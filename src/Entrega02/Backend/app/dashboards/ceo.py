@@ -17,17 +17,20 @@ def ceo_listar_cidades():
     cidades = [r["cidade"] for r in rows]
     return jsonify({"ok": True, "cidades": cidades})
 
-@dash_bp.get("/ceo/players/hist_idade")
+@dash_bp.post("/ceo/players/hist_idade")
 @login_required
 @role_required("CEO")
 def ceo_hist_idade():
     """
     Calcula no BACKEND o histograma de idades, opcionalmente filtrando por cidades.
-    Ex.: /api/ceo/players/hist_idade?cidades=São%20Paulo,Santos
+    Recebe cidades no corpo da requisição como JSON.
     Retorna pares (idade, quantidade).
     """
-    cidades_param = (request.args.get("cidades") or "").strip()
-    cidades = [c.strip() for c in cidades_param.split(",") if c.strip()]
+    data = request.get_json() or {}
+    cidades = data.get("cidades", [])
+    
+    if not isinstance(cidades, list):
+        cidades = []
 
     if cidades:
         placeholders = ", ".join([f":c{i}" for i in range(len(cidades))])
