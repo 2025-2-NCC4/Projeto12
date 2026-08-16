@@ -19,11 +19,6 @@ st.set_page_config(
     layout="wide"
 )
 
-try:
-    st.navigation(position="sidebar")
-except Exception:
-    st.markdown("<style>[data-testid='stSidebarNav']{display:none}</style>", unsafe_allow_html=True)
-
 usuario = require_login(perfil_obrigatorio=None, redirect_to="pages/Login.py")
 PERFIL_DO_USUARIO = (usuario or {}).get("perfil", "N/A")
 NOME_USUARIO = (usuario or {}).get("nome", "")
@@ -63,6 +58,11 @@ pages['chatbot'] = {
     'label': '🤖 Chatbot',
     'instance': ChatbotPage()
 }
+
+try:
+    st.navigation(pages, position="sidebar", expanded=True)
+except Exception:
+    st.markdown("<style>[data-testid='stSidebarNav']{display:none}</style>", unsafe_allow_html=True)
 
 page_list = list(pages.items())
 
